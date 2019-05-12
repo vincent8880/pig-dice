@@ -50,7 +50,7 @@ $("#roll-dice").click(function () {
         var getPlayerId = playerDetails[pos];
         getPlayerId.AddScores(getRandom);
         if (getRandom == 1 && pos == 0) {
-            $("#content" + (pos + 1) + " h4").text("0");
+            $("#player-1-score" + (pos + 1) + " player-1-total-score").text("0");
             $("#content" + (pos + 1)).removeClass("player-turn");
             $("#image-die").html("");
             pos = 1;

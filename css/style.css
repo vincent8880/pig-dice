@@ -1,0 +1,22 @@
+body{
+    text-align: center;
+}
+.container{
+    margin-top:20px
+    
+  
+    
+}
+.box {
+    background-color: blue;
+    color: #fff;
+    width: 60%;
+    margin: 0 auto;
+    padding: 12px;
+    text-align: center;
+}
+.playerscore{
+    font-size: 80px;
+    margin-bottom:50px;
+
+}

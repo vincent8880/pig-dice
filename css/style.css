@@ -3,9 +3,9 @@ body{
 }
 .container{
     margin-top:20px
-    
-  
-    
+    }
+.score{
+    font-size: 40px;
 }
 .box {
     background-color: blue;
@@ -14,9 +14,10 @@ body{
     margin: 0 auto;
     padding: 12px;
     text-align: center;
+    
 }
 .playerscore{
-    font-size: 80px;
+    font-size: 100px;
     margin-bottom:50px;
     color:white;
 
@@ -44,4 +45,5 @@ html {
 }
 h2{
     color:white;
+    padding-bottom: 30px;
 }

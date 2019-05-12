@@ -8,7 +8,7 @@ body{
     font-size: 40px;
 }
 .box {
-    color: #fff;
+    color:black;
     width: 60%;
     margin: 0 auto;
     padding: 12px;
@@ -16,13 +16,13 @@ body{
     
 }
 .playerscore{
-    font-size: 100px;
+    font-size: 200px;
     margin-bottom:50px;
-    color:white;
+    color:black;
 
 }
 .roll{
-   color:white;
+   color:black;
    margin-top:200px;
    width:180px;
    height:60px;
@@ -30,30 +30,33 @@ body{
    background-color:red;
 }
 .hold{
-    color:white;
+    color:black;
     margin-top:40px;
     width:180px;
     height:60px;
     font-size:20px; 
-    background-color:green;
+    background-color:red;
 }
 body,
 html {
     height: 100%;
-    background-image: url("../img/dice.jpg");
+    background-image: url("../img/IMG.jpeg");
     background-size: cover;
     position: relative;
 }
 h2{
-    color:white;
-    padding-bottom: 30px;
+    color:black;
+    margin-top:50px;
 }
 footer{
        position: fixed;
-        color: black;
+        color:white;
         background-color:blue;
         right: 0;
         left: 0;
         bottom: 0;
         width: 100%;
     }
+i{
+    color:red;
+}

@@ -8,7 +8,6 @@ body{
     font-size: 40px;
 }
 .box {
-    background-color: blue;
     color: #fff;
     width: 60%;
     margin: 0 auto;
@@ -23,18 +22,20 @@ body{
 
 }
 .roll{
-   background-color:red;
-   margin-top:40px;
+   color:white;
+   margin-top:200px;
    width:180px;
    height:60px;
    font-size:20px;
+   background-color:red;
 }
 .hold{
-    background-color:red;
+    color:white;
     margin-top:40px;
     width:180px;
     height:60px;
     font-size:20px; 
+    background-color:green;
 }
 body,
 html {
@@ -47,3 +48,12 @@ h2{
     color:white;
     padding-bottom: 30px;
 }
+footer{
+       position: fixed;
+        color: black;
+        background-color:blue;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }

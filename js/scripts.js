@@ -40,10 +40,24 @@ function reset() {
     PlayersInfo.playerMarks = 0;
     PlayersInfo.totalScores = 0;
     $("#image").html("");
-    $("p.text-uppercase").text("");
-    $("h1").text("0");
-    $(".cumulative").text("");
+    $(".playerscore").text("0");
+    $(".score").text("0");
 }
+$("#roll-dice").click(function () {
+    if (num == 2) {
+        var switchPlayer;
+        var getRandom = genRandom();
+        var getPlayerId = playerDetails[pos];
+        getPlayerId.AddScores(getRandom);
+        if (getRandom == 1 && pos == 0) {
+            $("#content" + (pos + 1) + " h4").text("0");
+            $("#content" + (pos + 1)).removeClass("player-turn");
+            $("#image-die").html("");
+            pos = 1;
+            switchPlayer = playerDetails[pos];
+            $("p.text-uppercase").html("Oooops, You rolled a 1. <br>" + switchPlayer.playerNames + "'s turn");
+            // alert("Oooops, You rolled a 1. " + switchPlayer.playerNames + "'s turn");
+            $("#content" + (pos + 1)).addClass("player-turn");
  
        
             

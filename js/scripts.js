@@ -14,6 +14,22 @@ var genRandom = function () {
     randomNo = Math.floor(Math.random() * 6);
     return randomNo;
 }
+var num = 0,
+    newMark = 0,
+    playerDetails = [],
+    finalScore = 0,
+    diePic = "",
+    pos = 0;
+
+function PlayersInfo(name, score, totalScore) {
+    this.playerNames = name;
+    this.playerMarks = score;
+    this.totalScores = totalScore;
+}
+var genRandom = function () {
+    randomNo = Math.floor(Math.random() * 6);
+    return randomNo;
+}
 PlayersInfo.prototype.AddScores = function (thisMark) {
     if (thisMark === 1) {
         this.playerMarks = 0;
@@ -40,72 +56,50 @@ function reset() {
     pos = 0;
     PlayersInfo.playerMarks = 0;
     PlayersInfo.totalScores = 0;
-    $("#image").html("");
-    $(".playerscore").text("0");
-    $(".score").text("");
+    $("#image-die").html("");
+    $("p.text-uppercase").text("");
+    $("h1").text("0");
+    $(".cumulative").text("");
 }
 $(document).ready(function () {
-    $("#reset").click(function () {
-        reset();
-        $("#hold").show();
-        $("#roll-dice").show();
-        $("#reset").hide();
-        $("#content1").addClass("player-turn");
-        // console.log(finalScore);
-    })
-    $("#player-names").submit(function (event) {
-        event.preventDefault();
-        num++;
-        if (num > 2) {
-            alert("Players cannot exceed 2!");
-            playerDetails = [];
-            num = 0;
-            console.log(playerDetails);
-            reset();
-        }else if(num==2){
-            $("#input-details").modal('hide');
-        }
-        var newPlayer = new PlayersInfo([player1 ,player2 ], 0, 0);
-        playerDetails.push(newPlayer);
-        $(".col-sm").addClass("player-turn");
-        // console.log(playerDetails);
-        $(".col-sm" + num + " .playerscore").html("<span class=player" + num + ">" + newPlayer.playerNames + "</span>");
-
-        
-    });
     $(".roll").click(function () {
-        if (num == 2) {
+             var inputtedName = $("#name-player");
+              var newPlayer = new PlayersInfo(inputtedName, 0, 0);
+             playerDetails.push(newPlayer);
+            var switchPlayer;
             var getRandom = genRandom();
             var getPlayerId = playerDetails[pos];
             getPlayerId.AddScores(getRandom);
             if (getRandom == 1 && pos == 0) {
-                $(".col-sm" + (pos + 1) + " .score").text("0");
-                $(".col-sm" + (pos + 1)).removeClass("player-turn");
-                $("#image").html("");
+                $("#content" + (pos + 1) + " h4").text("0");
+                $("#content" + (pos + 1)).removeClass("player-turn");
+                $("#image-die").html("");
                 pos = 1;
-                $(".col-sm" + (pos + 1)).addClass("player-turn");
+                switchPlayer = playerDetails[pos];
+                $("p.text-uppercase").html("Oooops, You rolled a 1. <br>" + switchPlayer.playerNames + "'s turn");
+                $("#content" + (pos + 1)).addClass("player-turn");
             } else if (getRandom == 1 && pos == 1) {
-                $(".col-sm" + (pos + 1) + " .score").text("0");
-                $("#col-sm" + (pos + 1)).removeClass("player-turn");
-                $("#image").html("");
+                $("#content" + (pos + 1) + " h4").text("0");
+                $("#content" + (pos + 1)).removeClass("player-turn");
+                $("#image-die").html("");
                 pos = 0;
-                $(".col-sm" + (pos + 1)).addClass("player-turn");
+                switchPlayer = playerDetails[pos];
+                $("p.text-uppercase").html("Oooops, You rolled a 1. <br>" + switchPlayer.playerNames + "'s turn");
+                $("#content" + (pos + 1)).addClass("player-turn");
             } else if (getRandom > 1) {
                 newMark = getPlayerId.playerMarks;
-                $(".col-sm" + (pos + 1) + " .score").text(newMark);
-                $("#image").html("<img class='dice' height='200' width = '200' src=" + getDieSide(getRandom) + ">")
+                $("p.text-uppercase").text("");
+                $("#content" + (pos + 1) + " h4").text(newMark);
+                $("#image-die").html("<img class='dice' height='200' width = '200' src=" + getDieSide(getRandom) + ">")
             }
             console.log(getRandom + " " + pos + " " + newMark);
-        } 
     });
-    $("#hold").click(function () {
-        if (num == 2) {
+    $(".hold").click(function () {
             var getPlayerId = playerDetails[pos];
             newMark = getPlayerId.playerMarks;
             getPlayerId.Total(newMark);
             finalScore = getPlayerId.totalScores;
             console.log(finalScore);
-            //Make the total become 0;//Final score, This Round, Dice Value
             getPlayerId.playerMarks = 0;
             $("#content" + (pos + 1) + " h4").text("0");
             $("#content" + (pos + 1) + " h1").text(finalScore);
@@ -131,12 +125,8 @@ $(document).ready(function () {
                 $("#content1").removeClass("player-turn");
                 $("#content2").removeClass("player-turn");
             }
-        } else if (num == 1) {
-            alert("Player 2 Name Required");
-            $("#input-details").modal();
-        } else if (num == 0) {
-            alert("Players' Names Required");
-            $("#input-details").modal();
-        }
+        
+        
+        
     });
 });

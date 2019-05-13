@@ -11,3 +11,9 @@ technicalities you may need to learn
   4.If he/she gets a one the score resets to zero and is not added to the total score
   5.When you press hold the cumulative score is added to the total score.
   6.If you press hold or get a one it becomes the next players turn
+  7.The first player to reach a total score of 100 wins.
+``
+## DEVELOPMENT
+Developer:Vincent Ododo
+Email:ododovincent54@gmail.com
+You can contact me for any inquiries

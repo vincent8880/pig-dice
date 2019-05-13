@@ -76,7 +76,7 @@ $(document).ready(function () {
                 $("#image").html("");
                 pos = 1;
                 switchPlayer = playerDetails[pos];
-                $("p.text-uppercase").html("Oooops, You rolled a 1. <br>" + switchPlayer.playerNames + "'s turn");
+                $("p.text-uppercase").html("Oooops, You rolled a 1.");
                 $("#content" + (pos + 1)).addClass("player-turn");
             } else if (getRandom == 1 && pos == 1) {
                 $("#content" + (pos + 1) + " h4").text("0");
@@ -84,7 +84,7 @@ $(document).ready(function () {
                 $("#image").html("");
                 pos = 0;
                 switchPlayer = playerDetails[pos];
-                $("p.text-uppercase").html("Oooops, You rolled a 1. <br>" + switchPlayer.playerNames + "'s turn");
+                $("p.text-uppercase").html("Oooops, You rolled a 1.");
                 $("#content" + (pos + 1)).addClass("player-turn");
             } else if (getRandom > 1) {
                 newMark = getPlayerId.playerMarks;
@@ -119,8 +119,6 @@ $(document).ready(function () {
                 $(".winner-text").html("<h3 class = 'text-uppercase'>" + "YOU HAVE WON!!!</h3>")
                 $("#winner-modal").modal();
                 // alert(getPlayerId.playerNames + " has won!!");
-                $(".hold").hide();
-                $(".roll").hide();
                 reset();
                 $("#content1").removeClass("player-turn");
                 $("#content2").removeClass("player-turn");

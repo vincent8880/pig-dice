@@ -5,4 +5,9 @@ The game can be played in any browser with any device and here are some
 technicalities you may need to learn
 ``
   1.when the page first loads up there are two button: roll and hold.
-   The player who first presses the roll button is player
+  2.The player who first presses the roll button is player1 by default while
+  the players who rolls after is player2.
+  3.when the roll button is pressed the cumulative scores add up until he either presses the hold button or gets a one.
+  4.If he/she gets a one the score resets to zero and is not added to the total score
+  5.When you press hold the cumulative score is added to the total score.
+  6.If you press hold or get a one it becomes the next players turn

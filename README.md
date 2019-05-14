@@ -18,3 +18,4 @@ Developer:Vincent Ododo
 Email:ododovincent54@gmail.com
 You can contact me for any inquiries
 ## LICENSE
+https://github.com/vincent8880/pig-dice/blob/master/LICENSE.md
